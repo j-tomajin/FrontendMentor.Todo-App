@@ -48,6 +48,7 @@ body {
 
     &__body {
         background-color: var(--clr-theme-list-bg);
+        box-shadow: var(--clr-theme-box-shadow);
     }
     &__list {
         min-height: rem(30);

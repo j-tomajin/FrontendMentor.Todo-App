@@ -9,6 +9,7 @@
   --clr-theme-completed-task: hsl(233deg, 11%, 84%);
   --clr-theme-text: hsl(236deg, 9%, 61%);
   --clr-theme-list-text: hsl(235deg, 19%, 35%);
+  --clr-theme-box-shadow: rgba(0, 0, 0, 0.4) 1px 5px 10px;
   --clr-gradient-bg: linear-gradient(45deg, hsl(192deg, 100%, 67%), hsl(280deg, 87%, 65%));
 }
 
@@ -266,6 +267,7 @@ body {
 }
 .todo__body {
   background-color: var(--clr-theme-list-bg);
+  box-shadow: var(--clr-theme-box-shadow);
 }
 .todo__list {
   min-height: 1.875rem;
@@ -379,6 +381,7 @@ body {
   --clr-theme-completed-task: hsl(234, 11%, 52%);
   --clr-theme-text: hsl(234, 11%, 52%);
   --clr-theme-list-text: hsl(236, 33%, 92%);
+  --clr-theme-box-shadow: hsl(234, 11%, 52%, .2) 1px 5px 10px;
   background-image: url("../assets/images/bg-mobile-dark.jpg");
   background-repeat: no-repeat;
   background-size: contain;
