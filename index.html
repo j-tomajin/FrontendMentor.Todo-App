@@ -21,12 +21,15 @@
       <div class="todo__head">
         <h1 class="todo__title">Todo</h1>
         <button class="toggleTheme" aria-label="theme button">
-          <img src="./src/assets/icons/icon-moon.svg" alt="">
+          <img class="theme-icon" src="./src/assets/icons/icon-moon.svg" alt="">
         </button>
       </div>
 
-      <input type="text" class="todo__new" placeholder="Create a new todo..." aria-label="new todo" data-input>
-
+      <div class="todo__input">
+        <label class="error">Enter something you want to do</label>
+        <button class="input__button"></button>
+        <input type="text" class="todo__new" placeholder="Create a new todo..." aria-label="new todo" data-input>
+      </div>
       <!-- LIST -->
       <div class="todo__body">
         <ul class="todo__list"></ul>
