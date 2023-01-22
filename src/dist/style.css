@@ -1,0 +1,384 @@
+:root {
+  --clr-primary-100: hsl(220deg, 98%, 61%);
+  --clr-primary-200: hsl(24deg, 98%, 61%);
+  --clr-neutral-100: hsl(0deg, 0%, 98%);
+  --clr-neutral-200: hsl(233deg, 11%, 84%);
+  --clr-neutral-300: hsl(233deg, 14%, 35%);
+  --clr-theme-list-bg: hsl(0deg, 0%, 98%);
+  --clr-theme-bg: hsl(236deg, 33%, 92%);
+  --clr-theme-completed-task: hsl(233deg, 11%, 84%);
+  --clr-theme-text: hsl(236deg, 9%, 61%);
+  --clr-theme-list-text: hsl(235deg, 19%, 35%);
+  --clr-gradient-bg: linear-gradient(45deg, hsl(192deg, 100%, 67%), hsl(280deg, 87%, 65%));
+}
+
+/* BOILERPLATE */
+/* Set core root defaults */
+html {
+  box-sizing: border-box;
+  font-size: 100%;
+  height: 100%;
+}
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+  *, *::before, *::after {
+    -webkit-animation-duration: 0.01ms !important;
+            animation-duration: 0.01ms !important;
+    -webkit-animation-iteration-count: 1 !important;
+            animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  vertical-align: baseline;
+}
+
+/* Set core body defaults */
+body {
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+  min-height: 100%;
+  margin: 0;
+  padding-block: clamp(6.25rem, 4.0492957746rem + 9.3896713615vw, 12.5rem);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+button {
+  border: none;
+  cursor: pointer;
+}
+
+/* Make images easier to work with */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* Remove default margin */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul,
+ol,
+summary {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #cccccc;
+  margin: 1em 0;
+}
+
+.sr-only:not(:focus):not(:active) {
+  clip: rect(0 0 0 0);
+  -webkit-clip-path: inset(50%);
+          clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+#root,
+#__next {
+  isolation: isolate;
+}
+
+@font-face {
+  font-family: "Josefin Sans";
+  src: local("Josefin Sans"), url("../assets/fonts/JosefinSans-Regular.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Josefin Sans Bold";
+  src: local("Josefin Sans-Bold"), url("../assets/fonts/JosefinSans-Bold.ttf");
+  font-weight: bold;
+  font-style: normal;
+}
+body {
+  font-family: "Josefin Sans";
+}
+
+/* TYPOGRAPHY RESET */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+/* A elements that don't have a class get default styles */
+a, a:focus, a:visited {
+  text-decoration: none;
+}
+
+a:not([class]) {
+  -webkit-text-decoration-skip: ink;
+          text-decoration-skip-ink: auto;
+}
+
+button {
+  background-color: transparent;
+  padding-block: 0;
+}
+
+.toggleTheme {
+  width: 2.8125rem;
+}
+.toggleTheme img {
+  display: inline-block;
+  width: 100%;
+}
+
+.todo__input {
+  position: relative;
+}
+
+.input__button {
+  margin-inline: 0.9375rem;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 1px solid gray;
+  position: absolute;
+  top: 3.125rem;
+}
+
+.error {
+  color: var(--clr-primary-200);
+  position: absolute;
+  top: 0.75rem;
+  left: 0.75rem;
+  transform: translateY(0.3125rem);
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s ease-in;
+}
+
+.error-display {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+footer {
+  margin-top: auto;
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+
+.attribution a {
+  color: hsl(228deg, 45%, 44%);
+}
+
+body {
+  background-color: var(--clr-theme-bg);
+  background-image: url("../assets/images/bg-mobile-light.jpg");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+@media (min-width: 57.5em) {
+  body {
+    background-image: url("../assets/images/bg-desktop-light.jpg");
+  }
+}
+
+.todo {
+  width: min(100% - 1.5rem, 42.5rem);
+  margin-inline: auto;
+}
+.todo__head {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+}
+.todo__title {
+  color: var(--clr-neutral-100);
+  text-transform: uppercase;
+  line-height: 1;
+  letter-spacing: 0.625rem;
+  font-family: "Josefin Sans Bold";
+  font-size: clamp(2rem, 0.5849056604rem + 6.0377358491vw, 3rem);
+  margin-top: auto;
+}
+.todo__new {
+  outline: 0;
+  border: 1px solid transparent;
+  width: 100%;
+  border-radius: 0.3125rem;
+  background-color: var(--clr-theme-list-bg);
+  color: var(--clr-theme-list-text);
+  margin-block: 2.25rem 1rem;
+  -webkit-padding-start: 3.125rem;
+          padding-inline-start: 3.125rem;
+  padding-block: 0.75rem;
+}
+.todo__body {
+  background-color: var(--clr-theme-list-bg);
+}
+.todo__list {
+  min-height: 1.875rem;
+}
+.todo__items {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  border-bottom: 1px solid var(--clr-neutral-200);
+  cursor: -webkit-grab;
+  cursor: grab;
+}
+.todo__items:last-child {
+  border-bottom: 1px solid transparent;
+}
+.todo__items:hover .todo__remove {
+  opacity: 1;
+  pointer-events: auto;
+}
+.todo__items .todo__item {
+  color: var(--clr-theme-list-text);
+  text-transform: none;
+  line-height: 1;
+  letter-spacing: 0;
+  font-family: "Josefin Sans Bold";
+}
+.todo__items .task-complete {
+  color: var(--clr-theme-completed-task);
+  text-decoration: line-through;
+}
+.todo__items .btn-complete {
+  background-image: url("../assets/icons/icon-check.svg"), var(--clr-gradient-bg);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.todo__item {
+  cursor: pointer;
+  padding-block: 1rem;
+}
+.todo__items.dragging {
+  opacity: 0.5;
+}
+.todo__remove {
+  margin-inline: auto 0.9375rem;
+  opacity: 0;
+  pointer-events: none;
+}
+.todo__button {
+  margin-inline: 0.9375rem;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 1px solid gray;
+}
+.todo__menu {
+  padding-inline: 1rem;
+  border-top: 1px solid var(--clr-neutral-200);
+  font-size: 0.875rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+.todo__left {
+  color: var(--clr-theme-text);
+  pointer-events: none;
+  padding-block: 1rem;
+}
+.todo__show {
+  display: flex;
+  align-items: center;
+}
+.todo .show__btn {
+  color: var(--clr-theme-text);
+  text-transform: none;
+  line-height: 1;
+  letter-spacing: 0;
+  font-family: "Josefin Sans Bold";
+  padding-block: 1rem;
+}
+.todo .show__btn:hover:not(.active) {
+  color: var(--clr-theme-list-text);
+}
+.todo .active {
+  color: var(--clr-primary-100);
+}
+.todo .unshow {
+  display: none;
+}
+.todo .clear {
+  color: var(--clr-theme-text);
+  text-transform: none;
+  line-height: 1;
+  letter-spacing: 0;
+  font-family: "Josefin Sans Bold";
+  margin-left: auto;
+  padding-block: 1rem;
+  text-align: right;
+}
+.todo .clear:hover {
+  color: var(--clr-theme-list-text);
+}
+
+.darkmode {
+  --clr-theme-list-bg: hsl(235, 24%, 19%);
+  --clr-theme-bg: hsl(235, 21%, 11%);
+  --clr-theme-completed-task: hsl(234, 11%, 52%);
+  --clr-theme-text: hsl(234, 11%, 52%);
+  --clr-theme-list-text: hsl(236, 33%, 92%);
+  background-image: url("../assets/images/bg-mobile-dark.jpg");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+@media (min-width: 57.5em) {
+  .darkmode {
+    background-image: url("../assets/images/bg-desktop-dark.jpg");
+  }
+}/*# sourceMappingURL=style.css.map */
