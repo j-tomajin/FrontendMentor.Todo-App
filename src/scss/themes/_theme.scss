@@ -1,0 +1,22 @@
+// e.g: dark mode
+@use '../utilities/' as *;
+
+.darkmode {
+    --clr-theme-list-bg: hsl(235, 24%, 19%); 
+    --clr-theme-bg: hsl(235, 21%, 11%);
+    --clr-theme-completed-task: hsl(234, 11%, 52%);
+    --clr-theme-text: hsl(234, 11%, 52%);
+    --clr-theme-list-text: hsl(236, 33%, 92%);
+
+    background: {
+        image: url('../assets/images/bg-mobile-dark.jpg');
+        repeat: no-repeat;
+        size: contain;
+    };
+
+    @include breakpointMin(large-screen) {
+        background: {
+            image: url('../assets/images/bg-desktop-dark.jpg')
+        };
+    }
+}
