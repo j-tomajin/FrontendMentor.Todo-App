@@ -1,0 +1,42 @@
+@use 'functions';
+
+// text style
+@mixin text-style(
+    $color: black, 
+    $ff: 'San Serif',
+    $tt: none,
+    $lh: 1,
+    $ls: 0
+    ) {
+    color: $color;
+    text-transform: $tt;
+    line-height: $lh;
+    letter-spacing: $ls;
+
+    @if $ff == B {
+        font-family: 'Josefin Sans Bold';
+    }
+}
+
+// psuedo
+@mixin psuedo(
+    $loc: before, 
+    $content: '', 
+    $pos: absolute,
+    $top: unset,
+    $right: unset,
+    $bottom: unset,
+    $left: unset
+    ) {
+    position: $pos;
+    
+    &::#{$loc} {
+        content: $content;
+        position: absolute;
+        top: $top;
+        right: $right;
+        bottom: $bottom;
+        left: $left;
+        @content;
+    }
+}
