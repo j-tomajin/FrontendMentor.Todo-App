@@ -34,8 +34,8 @@ Users should be able to:
 
 ### Screenshot
 
-[Light](./Solution/solution-light.png)
-[dark](./Solution/solution-dark.png)
+- [Light](./Solution/solution-light.png)
+- [dark](./Solution/solution-dark.png)
 
 ### Links
 
