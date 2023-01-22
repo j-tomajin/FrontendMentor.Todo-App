@@ -153,3 +153,8 @@ body {
     }
 }
 
+.text {
+    text-align: center;
+    margin-top: rem(16);
+    color: var(--clr-theme-text);
+}

@@ -367,6 +367,12 @@ body {
   color: var(--clr-theme-list-text);
 }
 
+.text {
+  text-align: center;
+  margin-top: 1rem;
+  color: var(--clr-theme-text);
+}
+
 .darkmode {
   --clr-theme-list-bg: hsl(235, 24%, 19%);
   --clr-theme-bg: hsl(235, 21%, 11%);
