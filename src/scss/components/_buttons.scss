@@ -1,0 +1,49 @@
+@use '../utilities/' as *;
+
+button {
+    background-color: transparent;
+    padding-block: 0;
+}
+
+.toggleTheme {
+    width: rem(45);
+
+    img {
+        display: inline-block;
+        width: 100%;
+    }
+}
+
+.todo__input {
+    position: relative;
+}
+
+.input__button {
+    margin-inline: rem(15);
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 1px solid gray;
+
+    position: absolute;
+    top: rem(50);
+}
+
+.error {
+    color: var(--clr-primary-200);
+
+    position: absolute;
+    top: rem(12);
+    left: rem(12);
+    transform: translateY(rem(5));
+
+    opacity: 0;
+    pointer-events: none;
+
+    transition: all .3s ease-in;
+}
+
+.error-display {
+    transform: translateY(0);
+    opacity: 1;
+}
