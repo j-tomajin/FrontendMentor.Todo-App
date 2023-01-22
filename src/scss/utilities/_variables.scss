@@ -1,0 +1,21 @@
+$colors: (
+    primary: (
+        100: hsl(220, 98%, 61%),
+        200: hsl(24, 98%, 61%),
+    ),
+    neutral: (
+        100: hsl(0, 0%, 98%),
+        200: hsl(233deg, 11%, 84%),
+        300: hsl(233, 14%, 35%),
+    ),
+    theme: (
+        list-bg: hsl(0, 0%, 98%),
+        bg: hsl(236, 33%, 92%),
+        completed-task: hsl(233, 11%, 84%),
+        text: hsl(236, 9%, 61%),
+        list-text: hsl(235, 19%, 35%),
+    ),
+    gradient: (
+        bg: linear-gradient(45deg, hsl(192, 100%, 67%), hsl(280, 87%, 65%))
+    ),
+)
