@@ -115,12 +115,12 @@ function newListItem() {
     })
 
     removeBtn.addEventListener('click', function() {
-        todo_list.removeChild(li)
-        remaining_task = remaining_task - 1
-        item_left.innerText = remaining_task
-        
-        if(remaining_task < 0) {
-            remaining_task = 0
+       if(span.classList.contains('task-complete')) {
+            todo_list.removeChild(li)
+            item_left.innerText = remaining_task
+        } else {
+            todo_list.removeChild(li)
+            remaining_task = remaining_task - 1
             item_left.innerText = remaining_task
         }
     })
