@@ -246,8 +246,10 @@ const disableDarkMode = () => {
 
 if(theme === 'enabled') {
     enableDarkMode()
+    themeIcon.src = "./src/assets/icons/icon-moon.svg" 
 } else {
     disableDarkMode()
+    themeIcon.src = "./src/assets/icons/icon-sun.svg" 
 }
 
 toggleThemeBtn.addEventListener('click', () => {
